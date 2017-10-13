@@ -6,4 +6,4 @@ etcd_endpoints:
 - etcd3:2379
 front:
   dist:
-    dir: /data/static/dist
+    dir: /go/src/github.com/roscopecoltran/e3w/static/dist

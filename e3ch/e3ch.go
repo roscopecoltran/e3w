@@ -1,6 +1,8 @@
 package e3ch
 
 import (
+	// "fmt"
+
 	"github.com/coreos/etcd/clientv3"
 	"github.com/coreos/etcd/pkg/transport"
 	"github.com/roscopecoltran/e3w/conf"
