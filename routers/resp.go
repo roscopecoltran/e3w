@@ -6,8 +6,8 @@ import (
 )
 
 type response struct {
-	Result interface{} `json:"result"`
-	Err    string      `json:"err"`
+	Result interface{} `json:"result" yaml:"result"`
+	Err    string      `json:"err" yaml:"err"`
 }
 
 type respHandler func(c *gin.Context) (interface{}, error)

@@ -25,7 +25,6 @@ _testmain.go
 *.test
 *.prof
 
-e3w
 vendor
 
 # Compiled Object files, Static and Dynamic libs (Shared Objects)
@@ -80,6 +79,9 @@ server.rsa.crt
 server.rsa.key
 
 panicparse
+
+shared/dist/bin/e3w*
+shared/dist/bin/*
 
 shared/data/influxdb/data
 shared/data/influxdb/meta

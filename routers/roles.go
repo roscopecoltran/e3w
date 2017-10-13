@@ -17,7 +17,7 @@ func getRolesHandler(c *gin.Context, client *clientv3.Client) (interface{}, erro
 }
 
 type createRoleRequest struct {
-	Name string `json:"name"`
+	Name string `json:"name" yaml:"name"`
 }
 
 func createRoleHandler(c *gin.Context, client *clientv3.Client) (interface{}, error) {

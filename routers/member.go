@@ -16,9 +16,9 @@ const (
 
 type Member struct {
 	*etcdserverpb.Member
-	Role   string `json:"role"`
-	Status string `json:"status"`
-	DbSize int64  `json:"db_size"`
+	Role   string `json:"role" yaml:"role"`
+	Status string `json:"status" yaml:"status"`
+	DbSize int64  `json:"db_size" yaml:"db_size"`
 }
 
 func getMembersHandler(c *gin.Context, client *clientv3.Client) (interface{}, error) {

@@ -6,9 +6,9 @@ import (
 )
 
 type Node struct {
-	Key   string `json:"key"`
-	Value string `json:"value"`
-	IsDir bool   `json:"is_dir"`
+	Key   string `json:"key" yaml:"key"`
+	Value string `json:"value" yaml:"value"`
+	IsDir bool   `json:"is_dir" yaml:"is_dir"`
 }
 
 func parseNode(node *client.Node) *Node {

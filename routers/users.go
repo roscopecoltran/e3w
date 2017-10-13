@@ -15,8 +15,8 @@ func getUsersHandler(c *gin.Context, client *clientv3.Client) (interface{}, erro
 }
 
 type createUserRequest struct {
-	Name     string `json:"name"`
-	Password string `json:"password"`
+	Name     string `json:"name" yaml:"name"`
+	Password string `json:"password" yaml:"password"`
 }
 
 func createUserHandler(c *gin.Context, client *clientv3.Client) (interface{}, error) {

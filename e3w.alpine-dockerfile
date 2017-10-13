@@ -7,46 +7,36 @@ MAINTAINER Rosco Pecoltran <https://github.com/roscopecoltran>
 ARG GOPATH=${GOPATH:-"/go"}
 ARG APK_INTERACTIVE=${APK_INTERACTIVE:-"bash nano tree"}
 ARG APK_RUNTIME=${APK_RUNTIME:-"git openssl ca-certificates go nodejs"}
-ARG APK_BUILD=${APK_BUILD:-"nodejs-current-npm make musl-dev g++ gcc"} # nodejs-dev
+ARG APK_BUILD=${APK_BUILD:-"nodejs-npm make musl-dev g++ gcc"} 
 
 ENV APP_BASENAME=${APP_BASENAME:-"e3w"} \
     PATH="${GOPATH}/bin:/app:$PATH" \
     GOPATH=${GOPATH:-"/go"}
 
-COPY . /code
-WORKDIR /code
-
-RUN \
-        echo "http://dl-4.alpinelinux.org/alpine/edge/community" >> /etc/apk/repositories && \
-    \
-        apk upgrade && \
-    \
-        apk add --no-cache ${APK_RUNTIME} && \
-    \
-        apk add --no-cache --virtual=.interactive-dependencies ${APK_INTERACTIVE} && \
-    \
-        apk add --no-cache --virtual=.build-dependencies ${APK_BUILD} && \
-    \
-        mkdir -p /data/cache
-#    \
-#      apk del --no-cache --virtual=.build-dependencies && \
-#    \
-#        npm install && \
-
 COPY . /go/src/github.com/roscopecoltran/e3w
 WORKDIR /go/src/github.com/roscopecoltran/e3w
 
 RUN \
-    go get -v -u github.com/Masterminds/glide && \
-    go get -v -u github.com/mitchellh/gox && \
+        echo "http://dl-4.alpinelinux.org/alpine/edge/community" >> /etc/apk/repositories && \
+        apk upgrade && \
+        apk add --update --no-cache ${APK_RUNTIME} && \
+        apk add --update --no-cache --virtual=.interactive-dependencies ${APK_INTERACTIVE} && \
+        apk add --update --no-cache --virtual=.build-dependencies ${APK_BUILD} && \
+    \ 
+        cd ./static && \
+        npm install && \
+        npm run publish && \
+        ls -l && \        
     \
-    glide install --strip-vendor && \
-    \
-    gox -verbose -os="linux" -arch="amd64" -output="/app/{{.Dir}}" $(glide novendor)
+        cd .. && \
+        go get -v -u github.com/Masterminds/glide && \
+        go get -v -u github.com/mitchellh/gox && \
+        glide install --strip-vendor && \
+        gox -verbose -os="linux" -arch="amd64" -output="/app/bin/{{.Dir}}-{{.OS}}" $(glide novendor)
 
-VOLUME ["/data"]
+VOLUME ["/data", "/app"]
 
-EXPOSE 3000
+EXPOSE 8086 3002 3003
 
 CMD ["/bin/bash"]
-# CMD ["/app/scraper-server","/app/conf.d/providers.list.json"]
+# CMD ["/app/e3w", "-conf", "/data/conf.d/e3w/config.ini"]

@@ -2,16 +2,33 @@ package e3ch
 
 import (
 	"github.com/coreos/etcd/clientv3"
+	"github.com/coreos/etcd/pkg/transport"
+	"github.com/roscopecoltran/e3w/conf"
 	"github.com/soyking/e3ch"
-	"github.com/soyking/e3w/conf"
 )
 
 func NewE3chClient(config *conf.Config) (*client.EtcdHRCHYClient, error) {
-	clt, err := clientv3.New(clientv3.Config{
+
+	etcdConfig := clientv3.Config{
 		Endpoints: config.EtcdEndPoints,
 		Username:  config.EtcdUsername,
 		Password:  config.EtcdPassword,
-	})
+	}
+
+	if config.CertFile != "" || config.KeyFile != "" || config.TrustedCAFile != "" {
+		tlsInfo := transport.TLSInfo{
+			CertFile:      config.CertFile,
+			KeyFile:       config.KeyFile,
+			TrustedCAFile: config.TrustedCAFile,
+		}
+		tlsConfig, err := tlsInfo.ClientConfig()
+		if err != nil {
+			panic(err)
+		}
+		etcdConfig.TLS = tlsConfig
+	}
+
+	clt, err := clientv3.New(etcdConfig)
 	if err != nil {
 		return nil, err
 	}

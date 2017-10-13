@@ -1,11 +1,13 @@
 package routers
 
 import (
+	"fmt"
+
 	"github.com/coreos/etcd/clientv3"
 	"github.com/gin-gonic/gin"
+	"github.com/roscopecoltran/e3w/conf"
+	"github.com/roscopecoltran/e3w/e3ch"
 	"github.com/soyking/e3ch"
-	"github.com/soyking/e3w/conf"
-	"github.com/soyking/e3w/e3ch"
 )
 
 const (
@@ -44,11 +46,12 @@ func etcdWrapper(h etcdHandler) e3chHandler {
 }
 
 func InitRouters(g *gin.Engine, config *conf.Config, e3chClt *client.EtcdHRCHYClient) {
-	g.GET("/", func(c *gin.Context) {
-		c.File("./static/dist/index.html")
-	})
-	g.Static("/public", "./static/dist")
 
+	frontIndexFilePath := fmt.Sprintf("%s/index.html", config.Front.Dist.Dir)
+	g.GET("/", func(c *gin.Context) {
+		c.File(frontIndexFilePath)
+	})
+	g.Static("/public", config.Front.Dist.Dir)
 	e3chGroup := withE3chGroup(e3chClt, config)
 
 	// key/value actions

@@ -1,6 +1,21 @@
-hash: 52f371f6fa6fa400182071a03fa07f92565920a917deb0ba934f068ef0f7e587
-updated: 2017-10-13T21:25:02.909690109+02:00
+hash: 3d90620942e0471df8a141ea0a621febb4cf6357718229efe5790abf650f0e44
+updated: 2017-10-14T00:58:49.427952699+02:00
 imports:
+- name: github.com/asaskevich/govalidator
+  version: ca5f9e638c83bac66bfac70ded5bded1503135a7
+- name: github.com/astaxie/beego
+  version: 3162da131da68f38e85765781c9d1cc419963e67
+  subpackages:
+  - config
+  - context
+  - context/param
+  - grace
+  - logs
+  - session
+  - toolbox
+  - utils
+- name: github.com/BurntSushi/toml
+  version: a368813c5e648fee92e5f6c30e3944ff9d5e8895
 - name: github.com/coreos/etcd
   version: bb66589f8cf18960c7f3d56b1b83753caeed9c7a
   subpackages:
@@ -76,28 +91,92 @@ imports:
   - binding
   - json
   - render
+- name: github.com/go-ini/ini
+  version: c787282c39ac1fc618827141a1f762240def08a3
+- name: github.com/go-sql-driver/mysql
+  version: eb92a8dc628ca52501ddae1ed90eca7514f215bf
 - name: github.com/golang/protobuf
   version: 4bd1920723d7b7c925de087aa32e2187708897f7
   subpackages:
   - jsonpb
   - proto
   - ptypes/any
+- name: github.com/gorilla/context
+  version: 08b5f424b9271eedf6f9f0ce86cb9396ed337a42
+- name: github.com/gorilla/securecookie
+  version: e59506cc896acb7f7bf732d4fdf5e25f7ccd8983
+- name: github.com/gorilla/sessions
+  version: a3acf13e802c358d65f249324d14ed24aac11370
+- name: github.com/gosimple/slug
+  version: e9f42fa127660e552d0ad2b589868d403a9be7c6
+- name: github.com/jinzhu/configor
+  version: 6c409036e1aea1420f2e1a196f95c0e3c4aef091
+- name: github.com/jinzhu/gorm
+  version: 0a51f6cdc55d1650d9ed3b4c13026cfa9133b01e
+  subpackages:
+  - dialects/mysql
+  - dialects/postgres
+  - dialects/sqlite
+- name: github.com/jinzhu/inflection
+  version: 1c35d901db3da928c72a72d8458480cc9ade058f
+- name: github.com/jinzhu/now
+  version: d939ba741945c047cac69c329c5fb0d6b4a06520
+- name: github.com/joho/godotenv
+  version: a79fa1e548e2c689c241d10173efd51e5d689d5b
 - name: github.com/json-iterator/go
   version: 6240e1e7983a85228f7fd9c3e1b6932d46ec58e2
+- name: github.com/k0kubun/pp
+  version: e057ee7a28277be4d2af303443b6da377768181f
+- name: github.com/lib/pq
+  version: 017e4c14d80628353eaee677a1aeffe47a10c0dc
+  subpackages:
+  - hstore
+  - oid
 - name: github.com/mattn/go-isatty
-  version: fc9e8d8ef48496124e79ae0df75490096eccf6fe
+  version: a5cdd64afdee435007ee3e9f6ed4684af949d568
+- name: github.com/mattn/go-sqlite3
+  version: 5160b48509cf5c877bc22c11c373f8c7738cdb38
+- name: github.com/microcosm-cc/bluemonday
+  version: 68fecaef60268522d2ac3f0123cec9d3bcab7b6e
+- name: github.com/qor/admin
+  version: da60146a14d67957eac787402385267e08ec5aa6
+- name: github.com/qor/assetfs
+  version: ff57fdc13a148d39c3e930cb27c7eaf82e376891
+- name: github.com/qor/middlewares
+  version: 781378b69454a545d08058d8154aca40d079e7ab
+- name: github.com/qor/qor
+  version: bd1122299c28d18841a626dc510946ff9d110803
+  subpackages:
+  - resource
+  - utils
+- name: github.com/qor/responder
+  version: 2d882089748afcf4e729334d7bb7fa17057de2e9
+- name: github.com/qor/roles
+  version: 40e8ca5bae4b2333e95003e21796f8673afaad4c
+- name: github.com/qor/session
+  version: 8206b0adab706a6ef3ee6fabba2584d34429a26a
+  subpackages:
+  - gorilla
+  - manager
+- name: github.com/qor/validations
+  version: c8be0f7b95080477388bac66d3ee4379e96a9b38
+- name: github.com/rainycape/unidecode
+  version: cb7f23ec59bec0d61b19c56cd88cee3d0cc1870c
+- name: github.com/roscopecoltran/configor
+  version: bd955757118cff31d42aa182911adee709179756
 - name: github.com/soyking/e3ch
   version: 554492e6ce6ed73e1f471f26c5a7dfa0858eb11a
-- name: github.com/soyking/e3w
-  version: b66ffb269adbf1592c880f17055f6a39d2366ae2
-  subpackages:
-  - conf
-  - e3ch
-  - routers
+- name: github.com/theplant/cldr
+  version: b97a4c2a76cf8ba21d1cb8ed2f4c8ee103371e2d
 - name: github.com/ugorji/go
   version: ded73eae5db7e7a0ef6f55aace87a2873c5d2b74
   subpackages:
   - codec
+- name: go4.org
+  version: 034d17a462f7b2dcd1a4a73553ec5357ff6e6c6e
+  subpackages:
+  - reflectutil
+  - sort
 - name: golang.org/x/net
   version: ab5485076ff3407ad2d02db054635913f017b0ed
   subpackages:
@@ -116,14 +195,14 @@ imports:
   subpackages:
   - unix
 - name: golang.org/x/text
-  version: b19bf474d317b857955b12035d2c5acb57ce8b01
+  version: c01e4764d870b77f8abe5096ee19ad20d80e8075
   subpackages:
   - secure/bidirule
   - transform
   - unicode/bidi
   - unicode/norm
 - name: google.golang.org/genproto
-  version: 09f6ed296fc66555a25fe4ce95173148778dfa85
+  version: f676e0f3ac6395ff1a529ae59a6670878a8371a6
   subpackages:
   - googleapis/rpc/status
 - name: google.golang.org/grpc

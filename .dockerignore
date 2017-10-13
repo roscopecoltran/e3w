@@ -32,6 +32,10 @@ _cgo_export.*
 
 _testmain.go
 
+*-dockerfile
+docker-compose.*
+docker-compose-*
+
 *.exe
 *.test
 *.prof
@@ -188,6 +192,14 @@ server.rsa.key
 
 panicparse
 
+static/node_modules
+static/node_modules/
+static/node_modules/**
+
+shared/data/etcd
+shared/data/etcd/
+shared/data/etcd/**
+
 shared/data/influxdb/data
 shared/data/influxdb/meta
 shared/data/influxdb/wal
@@ -200,4 +212,8 @@ shared/data/etcd/member
 node_modules
 node_modules/
 node_modules/**
+
+static/node_modules
+static/node_modules/
+static/node_modules/**
 

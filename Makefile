@@ -36,6 +36,10 @@ deps:
 	@go get -v -u github.com/mitchellh/gox
 
 ### DOCKER-COMPOSE ##################################################################################################
+.PHONY: compose-dev
+compose-dev:
+	@docker-compose run --remove-orphans e3w-dev
+
 .PHONY: compose
 compose:
-	@docker-compose up --remove-orphans e3w
+	@docker-compose up --remove-orphans e3w-dist
