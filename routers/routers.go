@@ -48,8 +48,8 @@ func etcdWrapper(h etcdHandler) e3chHandler {
 func InitRouters(g *gin.Engine, config *conf.Config, e3chClt *client.EtcdHRCHYClient) {
 
 	frontIndexFilePath := fmt.Sprintf("%s/index.html", config.Front.Dist.Dir)
-	fmt.Printf("frontIndexFilePath: %s", frontIndexFilePath)
-	fmt.Printf("config.Front.Dist.Dir: %s", config.Front.Dist.Dir)
+	fmt.Printf("frontIndexFilePath: %s \n", frontIndexFilePath)
+	fmt.Printf("config.Front.Dist.Dir: %s \n", config.Front.Dist.Dir)
 
 	g.GET("/", func(c *gin.Context) {
 		c.File(frontIndexFilePath)
