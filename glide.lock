@@ -1,0 +1,152 @@
+hash: 52f371f6fa6fa400182071a03fa07f92565920a917deb0ba934f068ef0f7e587
+updated: 2017-10-13T21:25:02.909690109+02:00
+imports:
+- name: github.com/coreos/etcd
+  version: bb66589f8cf18960c7f3d56b1b83753caeed9c7a
+  subpackages:
+  - alarm
+  - auth
+  - auth/authpb
+  - client
+  - clientv3
+  - clientv3/clientv3util
+  - clientv3/concurrency
+  - clientv3/integration
+  - clientv3/leasing
+  - clientv3/mirror
+  - clientv3/naming
+  - clientv3/ordering
+  - clientv3/yaml
+  - compactor
+  - discovery
+  - embed
+  - error
+  - etcdserver
+  - etcdserver/api
+  - etcdserver/api/v2http
+  - etcdserver/api/v2http/httptypes
+  - etcdserver/api/v3rpc
+  - etcdserver/api/v3rpc/rpctypes
+  - etcdserver/auth
+  - etcdserver/etcdserverpb
+  - etcdserver/membership
+  - etcdserver/stats
+  - lease
+  - lease/leasehttp
+  - lease/leasepb
+  - mvcc
+  - mvcc/backend
+  - mvcc/mvccpb
+  - pkg/adt
+  - pkg/contention
+  - pkg/cors
+  - pkg/crc
+  - pkg/fileutil
+  - pkg/httputil
+  - pkg/idutil
+  - pkg/ioutil
+  - pkg/logutil
+  - pkg/netutil
+  - pkg/pathutil
+  - pkg/pbutil
+  - pkg/runtime
+  - pkg/schedule
+  - pkg/tlsutil
+  - pkg/transport
+  - pkg/types
+  - pkg/wait
+  - raft
+  - raft/raftpb
+  - rafthttp
+  - snap
+  - snap/snappb
+  - store
+  - version
+  - wal
+  - wal/walpb
+- name: github.com/coreos/go-semver
+  version: 8ab6407b697782a06568d4b7f1db25550ec2e4c6
+  subpackages:
+  - semver
+- name: github.com/gin-contrib/sse
+  version: 22d885f9ecc78bf4ee5d72b937e4bbcdc58e8cae
+- name: github.com/gin-gonic/gin
+  version: b8b68314faa067acae5b17c828127b04af51ebe2
+  subpackages:
+  - binding
+  - json
+  - render
+- name: github.com/golang/protobuf
+  version: 4bd1920723d7b7c925de087aa32e2187708897f7
+  subpackages:
+  - jsonpb
+  - proto
+  - ptypes/any
+- name: github.com/json-iterator/go
+  version: 6240e1e7983a85228f7fd9c3e1b6932d46ec58e2
+- name: github.com/mattn/go-isatty
+  version: fc9e8d8ef48496124e79ae0df75490096eccf6fe
+- name: github.com/soyking/e3ch
+  version: 554492e6ce6ed73e1f471f26c5a7dfa0858eb11a
+- name: github.com/soyking/e3w
+  version: b66ffb269adbf1592c880f17055f6a39d2366ae2
+  subpackages:
+  - conf
+  - e3ch
+  - routers
+- name: github.com/ugorji/go
+  version: ded73eae5db7e7a0ef6f55aace87a2873c5d2b74
+  subpackages:
+  - codec
+- name: golang.org/x/net
+  version: ab5485076ff3407ad2d02db054635913f017b0ed
+  subpackages:
+  - context
+  - html
+  - html/atom
+  - http2
+  - http2/hpack
+  - idna
+  - internal/timeseries
+  - lex/httplex
+  - trace
+  - webdav
+- name: golang.org/x/sys
+  version: e48874b42435b4347fc52bdee0424a52abc974d7
+  subpackages:
+  - unix
+- name: golang.org/x/text
+  version: b19bf474d317b857955b12035d2c5acb57ce8b01
+  subpackages:
+  - secure/bidirule
+  - transform
+  - unicode/bidi
+  - unicode/norm
+- name: google.golang.org/genproto
+  version: 09f6ed296fc66555a25fe4ce95173148778dfa85
+  subpackages:
+  - googleapis/rpc/status
+- name: google.golang.org/grpc
+  version: b3a44ab17b608fdae6ad11d44e3ce3c9084a2c0e
+  subpackages:
+  - codes
+  - connectivity
+  - credentials
+  - grpclb/grpc_lb_v1
+  - grpclog
+  - internal
+  - keepalive
+  - metadata
+  - naming
+  - peer
+  - stats
+  - status
+  - tap
+  - transport
+- name: gopkg.in/go-playground/validator.v8
+  version: 5f1438d3fca68893a817e4a66806cea46a9e4ebf
+- name: gopkg.in/ini.v1
+  version: 20b96f641a5ea98f2f8619ff4f3e061cff4833bd
+- name: gopkg.in/yaml.v2
+  version: cd8b52f8269e0feb286dfeef29f8fe4d5b397e0b
+testImports: []

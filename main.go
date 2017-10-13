@@ -19,7 +19,7 @@ const (
 var configFilepath string
 
 func init() {
-	flag.StringVar(&configFilepath, "conf", "conf/config.default.ini", "config file path")
+	flag.StringVar(&configFilepath, "conf", "/data/conf.d/e3w/config.ini", "config file path")
 	rev := flag.Bool("rev", false, "print rev")
 	flag.Parse()
 

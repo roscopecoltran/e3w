@@ -3,6 +3,8 @@
 *.a
 *.so
 
+config.default.ini
+
 dist/grawler
 dist/scraper-*
 
@@ -194,4 +196,8 @@ shared/data/grafana/lib
 shared/data/grafana/log
 
 shared/data/etcd/member
+
+node_modules
+node_modules/
+node_modules/**
 
