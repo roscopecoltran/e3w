@@ -1,6 +1,7 @@
 {
   "dependencies": {
-    "ng-admin": "^1.0.7"
+    "ng-admin": "^1.0.7",
+    "react-jsonschema-form": "^0.51.0"
   },
   "scripts": {
     "build": "./node_modules/webpack/bin/webpack.js",
