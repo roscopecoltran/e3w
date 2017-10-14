@@ -24,6 +24,10 @@ docker-compose.yml
 *.[568vq]
 [568vq].out
 
+bower_components
+bower_components/
+bower_components/**
+
 *.cgo1.go
 *.cgo2.c
 _cgo_defun.c

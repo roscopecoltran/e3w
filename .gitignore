@@ -27,6 +27,18 @@ _testmain.go
 
 vendor
 
+node_modules
+node_modules/
+node_modules/**
+
+cmd/ng-admin/static/node_modules
+cmd/ng-admin/static/node_modules/
+cmd/ng-admin/static/node_modules/**
+
+bower_components
+bower_components/
+bower_components/**
+
 # Compiled Object files, Static and Dynamic libs (Shared Objects)
 *.o
 *.a

@@ -2,7 +2,7 @@
 version: '3'
 services:
 
-  e3w-dist:
+  e3w_dist:
     container_name: e3w-dist
     build:
       context: ./shared/dist/
@@ -23,7 +23,7 @@ services:
     - etcd1
     command: ["/app/bin/e3w-linux", "-conf", "/data/conf.d/e3w/config.ini"]
 
-  e3w-dev:
+  e3w_dev:
     container_name: e3w-dev
     build:
       context: .
@@ -71,6 +71,8 @@ services:
     # - AUTH_USER=
     links:
     - etcd1
+    # command: ["bash"]
+
 
   etcd1:
     image: quay.io/coreos/etcd:v3.2.4

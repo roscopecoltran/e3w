@@ -1,6 +1,11 @@
-hash: 3d90620942e0471df8a141ea0a621febb4cf6357718229efe5790abf650f0e44
-updated: 2017-10-14T00:58:49.427952699+02:00
+hash: b8c1455b92f3d1f08bc104c1f32282c7f98c5c89eea4cd281004579dc80d8978
+updated: 2017-10-14T01:38:10.620614547+02:00
 imports:
+- name: github.com/ant0ine/go-json-rest
+  version: ebb33769ae013bd5f518a8bac348c310dea768b8
+  subpackages:
+  - rest
+  - rest/trie
 - name: github.com/asaskevich/govalidator
   version: ca5f9e638c83bac66bfac70ded5bded1503135a7
 - name: github.com/astaxie/beego
@@ -138,6 +143,11 @@ imports:
   version: 5160b48509cf5c877bc22c11c373f8c7738cdb38
 - name: github.com/microcosm-cc/bluemonday
   version: 68fecaef60268522d2ac3f0123cec9d3bcab7b6e
+- name: github.com/Onefootball/entity-rest-api
+  version: 6eb671c750adb48b5ca11b5fd53431a757e5acc8
+  subpackages:
+  - api
+  - manager
 - name: github.com/qor/admin
   version: da60146a14d67957eac787402385267e08ec5aa6
 - name: github.com/qor/assetfs

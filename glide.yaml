@@ -1,5 +1,13 @@
 package: github.com/roscopecoltran/e3w
 import:
+- package: github.com/Onefootball/entity-rest-api
+  subpackages:
+  - api
+  - manager
+- package: github.com/ant0ine/go-json-rest
+  subpackages:
+  - rest
+- package: github.com/mattn/go-sqlite3
 - package: github.com/astaxie/beego
 - package: github.com/jinzhu/gorm
   subpackages:
